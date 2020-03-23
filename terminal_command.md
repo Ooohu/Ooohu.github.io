@@ -1,6 +1,28 @@
-# Common command
+# Terminal Commands
+This Markdown file contains commands for a unix terminal.
 
-## Local operation
+## Index
+
+### Common Commands
+* [About files](#file-operation)
+
+
+### Apps
+* [tar](#tar)
+* [pdftk](#pdftk)
+* [tmux](#tmux)
+* [tar](#tar)
+* [make](#make)
+
+### Projects
+* [Formating a flash drive](#formating-a-flash-drive)
+* [To be a Wlan server](#to-be-a-wlan-server)
+* [To be a VPN server](#to-be-a-VPN-server)
+* [SSH keyparis](#set-up-ssh-keypairs-auto-log-in)
+
+
+
+## Common Commands
 ### Terminal windows
 New windows:
 
@@ -9,15 +31,9 @@ New windows:
 Set up initial environment:
 https://www.ibm.com/developerworks/linux/library/l-tip-prompt/
 
-
-
-### Run a script containing "cd"
+Run a script containing "cd"
 
 	. name.sh
-
-### Tool
-ipython/ idle3/ otave/ jupyter notebook/ putty/ dconf/ gnome-tweaks/pdftk/lutris
-
 
 To download new fonts:sudo apt-get install ttf-mscorefonts-installer
     Fix the download failed problem: 1.Alt+F2. 2.Type "software-properties.gtk" 3.Click in and select the "Download from" option as "Main server".
@@ -108,6 +124,10 @@ Download Website:
 	
 	--no-parent - do not download files form folders below given root folder (folder1/folder/ in our example; files from /folder1 are not going to be transferred).
 
+Intallation Global vs. local
+
+- Global directory: `/usr/local/bin/`
+- local directory: `$HOME/`
 
 ### File operation
 ---
@@ -152,18 +172,7 @@ Permission:
 0777: read & write & execute to everyone  
 755: read & execute to the owner
 
-----
-
-# Get connected
-	ssh -X account@cloc.cs.columbia.edu
-Copy file to the school:
-
-	ssh-copy-id -i ~/.ssh/id_rsa.pub account@cloc.cs.columbia.edu
-Copy file again:
-
-	scp <file> <username>@<IP address or hostname>:<Destination>
- 
-## On a file
+### Deal with text
 Concatenate files And print on the stand outpuT
 
 	cat name.txt
@@ -176,9 +185,21 @@ Print output (https://askubuntu.com/questions/420981/how-do-i-save-terminal-outp
 	<executable> >> <.txt> //append output
 	<executable> &>> <.txt> //append stdeer & output
 	<executable> 2>&1 <.txt> //append stdeer & output and display them
+
+### Get connected
+	ssh -X account@server
+Copy file to the school:
+
+	ssh-copy-id -i ~/.ssh/id_rsa.pub account@server
+Copy file again:
+
+	scp <file> <username>@<IP address or hostname>:<Destination>
+ 
 	
+## Tool
+ipython/ idle3/ otave/ jupyter notebook/ putty/ dconf/ gnome-tweaks/pdftk/lutris
 	
-## pdftk
+### pdftk
 
 Get all pdf in one:
 
@@ -192,16 +213,28 @@ Rearrange Pdf layout (column x row)
 	
 	pdfnup --nup 2x1 mypdf.pdf
 
-## Tmux
+### Tmux
 Tmux: (Scrolling)
 
 	Ctrl+b + [
 
+### tar
+Extract a a `.tar.gz` file
+	
+	tar -zxvf file.tar.gz
+
+### Make
+`etc/Makefile.arch` has some alias that can be directly used that vary according to operation system.
+
+- `*.so` is a dynamic library
+
+Some grammar for Makefile:
+
+For given input `A:B`, `$@` calls `A` and `$^` calls `B`.
 
 
----
-# Specific Project 
-## Formating a flash drive
+## Specific Project 
+### Formating a flash drive
 Remove bad blocks:
 
 		Ooohu@Ooohu:~$ lsblk
@@ -217,7 +250,7 @@ Change it to the NTFS:
 
 		sudo mkfs.ntfs -f /dev/name
 		
-## To be a Wlan server
+### To be a Wlan server
 Install Samba: 
 
 		sudo apt-get install samba
@@ -245,7 +278,7 @@ Check local ip for connection (in the wlan0 section):
 	
 		ifconfig
 
-## To be a VPN server
+### To be a VPN server
 Tutorial from https://linuxconfig.org/openvpn-setup-on-ubuntu-18-04-bionic-beaver-linux
 
 - Install OpenVPN in phone; install easy-rsa and openvpn in Ubuntu.
@@ -438,7 +471,7 @@ Trouble shooting:
 		
 		$ sudo systemctl start openvpn@server
 			
-## Set up SSH keypairs (auto log in)
+### Set up SSH keypairs (auto log in)
 0. Generate a SSH Key:
 
 see gitHub:
@@ -480,4 +513,4 @@ For example, I want to use $ssh k$ to log in:
 	Host k
         User account
         IdentityFile .ssh/id_rsa
-        HostName cloc.cs.columbia.edu
+        HostName server 
