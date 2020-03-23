@@ -13,6 +13,7 @@ This Markdown file contains commands for a unix terminal.
 * [tmux](#tmux)
 * [tar](#tar)
 * [make](#make)
+* [jekyll](#jekyll)
 
 ### Projects
 * [Formating a flash drive](#formating-a-flash-drive)
@@ -218,7 +219,7 @@ Tmux: (Scrolling)
 
 	Ctrl+b + [
 
-### tar
+### Tar
 Extract a a `.tar.gz` file
 	
 	tar -zxvf file.tar.gz
@@ -231,6 +232,13 @@ Extract a a `.tar.gz` file
 Some grammar for Makefile:
 
 For given input `A:B`, `$@` calls `A` and `$^` calls `B`.
+
+### Jekyll
+Activate webpage in the local computer:
+
+	bundle exec jekyll serve
+	
+Go to `http://localhost:4000` to visit it from the browser: 
 
 
 ## Specific Project 
