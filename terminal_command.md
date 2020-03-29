@@ -4,8 +4,8 @@ This Markdown file contains commands for a unix terminal.
 ## Index
 
 ### Common Commands
+* [Bash functions](#bash-functions)
 * [About files](#file-operation)
-
 
 ### Apps
 * [tar](#tar)
@@ -21,9 +21,47 @@ This Markdown file contains commands for a unix terminal.
 * [To be a VPN server](#to-be-a-VPN-server)
 * [SSH keyparis](#set-up-ssh-keypairs-auto-log-in)
 
-
+### Got a Problem?
+* [Mac](#mac-issue)
 
 ## Common Commands
+### Bash Functions
+Change prompt to "username@hostname:cwd \$"
+
+~~~
+export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
+~~~
+
+Set up colorful command lines (add the following to `.bash_profile`) [Reference](https://www.ibm.com/developerworks/linux/library/l-tip-prompt/)
+
+    #Color
+    export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\W\[\033[m\]\$ "
+    export PROMPT_DIRTRIM=2
+
+Enable command line colors
+
+~~~
+export CLICOLOR=1
+~~~
+
+Define colors for the 'ls'
+
+~~~
+export LSCOLORS=ExFxBxDxCxegedabagacad
+~~~
+
+Short-cut
+
+* G: colorizes output
+* h: makes sizes human readable
+* F: throws a / after a directory
+
+~~~
+alias ls='ls -GFh'
+~~~
+
+
+
 ### Terminal windows
 New windows:
 
@@ -112,6 +150,8 @@ Shutdown:
 Search a pattern in a file:
 
 	grep pattern file_name
+	#or a sentence
+	grep "sentence" file_name
 	
 view running processes:
 
@@ -132,7 +172,7 @@ Intallation Global vs. local
 
 ### File operation
 ---
-Show detail of files in the current folder:
+Show detail of files in the current directory:
 	
 	ls -alF
 
@@ -151,6 +191,10 @@ Delete an empty folder
 Delete a non-empty folder:
 
 	rm -rf folder
+
+Remove files (with special characters):
+
+    rm -v -- "-files -d | xargs git checkout --"
 
 Copy a file (-b means backup):
 
@@ -522,3 +566,8 @@ For example, I want to use $ssh k$ to log in:
         User account
         IdentityFile .ssh/id_rsa
         HostName server 
+
+## Got a Problem?
+### Mac Issue
+Incorrect directory for an app? Try:
+`export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"`
