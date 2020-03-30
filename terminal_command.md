@@ -264,9 +264,25 @@ Tmux: (Scrolling)
 	Ctrl+b + [
 
 ### Tar
-Extract a a `.tar.gz` file
+Create an archive
+
+	tar -czvf output.tar <directory>
+
+Extract a `.tar.gz` file
 	
 	tar -zxvf file.tar.gz
+
+Extract a `.tar` file
+	
+	tar -xf file.tar
+
+[Options](https://stackoverflow.com/questions/21929223/what-does-zxvf-mean-in-tar-zxvf-filename)
+	
+	c - create an archive
+	f - indicates the next argument is the file name
+	v - print filenames verbosely
+	x - extract files from the archive
+	z - compress or unzip, read or write archives through `gzip`
 
 ### Make
 `etc/Makefile.arch` has some alias that can be directly used that vary according to operation system.
