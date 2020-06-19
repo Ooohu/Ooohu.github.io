@@ -8,12 +8,13 @@ This Markdown file contains commands for a unix terminal.
 * [About files](#file-operation)
 
 ### Apps
-* [tar](#tar)
+* [awk](#awk)
 * [pdftk](#pdftk)
 * [tmux](#tmux)
 * [tar](#tar)
 * [make](#make)
 * [jekyll](#jekyll)
+
 
 ### Projects
 * [Formating a flash drive](#formating-a-flash-drive)
@@ -76,47 +77,47 @@ Run a script containing "cd"
 
 To download new fonts:sudo apt-get install ttf-mscorefonts-installer
     Fix the download failed problem: 1.Alt+F2. 2.Type "software-properties.gtk" 3.Click in and select the "Download from" option as "Main server".
-    
+
 To change user password into anything:sudo passwd user:
 
     delete passwd: passwd -d username
-    
-Drop to a console: 
+
+Drop to a console:
 
 	Ctrl+Alt+F1; Crtl+Alt+F7 to go back.
 
-Adjust username: 
+Adjust username:
 
 	usermod
 
-Process management:top; 
+Process management:top;
 
 	Ctrl+L to search;
 
-End a process: 
+End a process:
 
-	xkill; 
+	xkill;
 	killall process_name
-	
+
 End a process precisely:
 
-1. Locate PID#: 
+1. Locate PID#:
 
 		ps u
-	
+
 3.  Kill:
 
 		kill PID#
 		kill -9 PID# (kill a process immediately)
-	
+
 1. Kill in the top:
 
 		top, k, PID#, 9 (kill a process in top)
 
-Open the current folder and select the file: 
+Open the current folder and select the file:
 
 		nautilus file_name
-	
+
 Open a file A under current directory in a new window:
 
 	gnome-open A (Tab to fill the name)
@@ -124,27 +125,29 @@ Open a file A under current directory in a new window:
 
 Folder Navigation:
 
-    cd A (Change to a directory named A); 
-    cd .. (move up one folder); 
+    cd A (Change to a directory named A);
+    cd .. (move up one folder);
     cd - (get back);
-    ls         (list files); 
+    ls         (list files);
     ls -d -- */ (list all the directories in current directory)
     ls -lrth (show dates of diles)
     ls -al (show all link)
+    ls -F |grep -v / | wc -l #count # of files in current directory
+    ifdh ls #list files in full path
 
 Link a file (shortcut)
-	 
-	 ln -s <target> <file for calling the target> 
 
-Open setting: 
+	 ln -s <target> <file for calling the target>
+
+Open setting:
 
 	unity-control-center
 
-Shutdown: 
+Shutdown:
 
 	poweroff;
-    shutdown --help (Information of shutdown); 
-    shutdown 5 (shutdown after 5 minutes); 
+    shutdown --help (Information of shutdown);
+    shutdown 5 (shutdown after 5 minutes);
     reboot (restart)
 
 Search a pattern in a file:
@@ -152,7 +155,7 @@ Search a pattern in a file:
 	grep pattern file_name
 	#or a sentence
 	grep "sentence" file_name
-	
+
 view running processes:
 
 	gnome-system-monitor
@@ -162,7 +165,7 @@ Show installed apps:
 Download Website:
 
 	wget --mirror -p --convert-links -P ~/Desktop/C/Books/ http://www.ee.surrey.ac.uk/Teaching/Unix/
-	
+
 	--no-parent - do not download files form folders below given root folder (folder1/folder/ in our example; files from /folder1 are not going to be transferred).
 
 Intallation Global vs. local
@@ -173,14 +176,14 @@ Intallation Global vs. local
 ### File operation
 ---
 Show detail of files in the current directory:
-	
+
 	ls -alF
 
 Check the size of files in terminal:
 
  	du -a -h
 
-Delete a file (permanently): 
+Delete a file (permanently):
 
 	rm file
 
@@ -214,7 +217,7 @@ Create and edit a text file (in nano):
 
 Permission:
 
-0777: read & write & execute to everyone  
+0777: read & write & execute to everyone
 755: read & execute to the owner
 
 ### Deal with text
@@ -223,7 +226,7 @@ Concatenate files And print on the stand outpuT
 	cat name.txt
 
 Print output (https://askubuntu.com/questions/420981/how-do-i-save-terminal-output-to-a-file)
-	
+
 	<executable> > <.txt> //rediret output
 	<executable> 2> <.txt> //rediret stdeer
 	<executable> &> <.txt> //redirect stdeer & output
@@ -239,11 +242,16 @@ Copy file to the school:
 Copy file again:
 
 	scp <file> <username>@<IP address or hostname>:<Destination>
- 
-	
+
+
 ## Tool
 ipython/ idle3/ otave/ jupyter notebook/ putty/ dconf/ gnome-tweaks/pdftk/lutris
-	
+
+### awk
+Sum up numbers in each row in a text file
+
+	awk '{s+=$1} END {printf "%.0f", s}' <data_file>
+
 ### pdftk
 
 Get all pdf in one:
@@ -251,11 +259,11 @@ Get all pdf in one:
 	pdftk * pdf cat output ALL.pdf
 
 Two slide in one page:
-	
+
 	pdfjam Page1.pdf Page2.pdf --nup 2x1 --landscape --outfile Page1+2.pdf
-	
+
 Rearrange Pdf layout (column x row)
-	
+
 	pdfnup --nup 2x1 mypdf.pdf
 
 ### Tmux
@@ -269,15 +277,15 @@ Create an archive
 	tar -czvf output.tar <directory>
 
 Extract a `.tar.gz` file
-	
+
 	tar -zxvf file.tar.gz
 
 Extract a `.tar` file
-	
+
 	tar -xf file.tar
 
 [Options](https://stackoverflow.com/questions/21929223/what-does-zxvf-mean-in-tar-zxvf-filename)
-	
+
 	c - create an archive
 	f - indicates the next argument is the file name
 	v - print filenames verbosely
@@ -297,29 +305,29 @@ For given input `A:B`, `$@` calls `A` and `$^` calls `B`.
 Activate webpage in the local computer:
 
 	bundle exec jekyll serve
-	
-Go to `http://localhost:4000` to visit it from the browser: 
+
+Go to `http://localhost:4000` to visit it from the browser:
 
 
-## Specific Project 
+## Specific Project
 ### Formating a flash drive
 Remove bad blocks:
 
 		Ooohu@Ooohu:~$ lsblk
 		NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
-		sda      8:0    0 111.8G  0 disk 
+		sda      8:0    0 111.8G  0 disk
 		├─sda1   8:1    0 107.8G  0 part /
 		└─sda2   8:2    0     4G  0 part [SWAP]
-		sdb      8:16   1  28.9G  0 disk 
-		└─sdb1   8:17   1  28.9G  0 part 
+		sdb      8:16   1  28.9G  0 disk
+		└─sdb1   8:17   1  28.9G  0 part
 		Ooohu@Ooohu:~$ sudo fsck /dev/sdb1
 
 Change it to the NTFS:
 
 		sudo mkfs.ntfs -f /dev/name
-		
+
 ### To be a Wlan server
-Install Samba: 
+Install Samba:
 
 		sudo apt-get install samba
 
@@ -328,41 +336,41 @@ Set up password for yourself (Ooohu) for log in.
 		sudo smbpasswd -a Ooohu
 
 Configurate
-		
+
 		sudo vim /etc/samba/smb.conf
-		
+
 Add the following lines:
 
 		[NAME]
 		comment = A Ubuntu server
-		path = ~/Public/ 
+		path = ~/Public/
 		read only = no
 		guest ok = yes
-		
+
 AND manually right click the ~/Public/ file, and open it to guest user
 in "Local Network Share"
 
 Check local ip for connection (in the wlan0 section):
-	
+
 		ifconfig
 
 ### To be a VPN server
 Tutorial from https://linuxconfig.org/openvpn-setup-on-ubuntu-18-04-bionic-beaver-linux
 
 - Install OpenVPN in phone; install easy-rsa and openvpn in Ubuntu.
-	
+
 		$sudo apt-get update && sudo apt-get install openvpn easy-rsa
 
 -
 Create a working directory (via easy-rsa package) and move in to this
 directory:
-		
+
 	$ make-cadir certificates && cd certificates
-		
+
 1. Adjust variables in the certificate/vas file. From
-	
+
 		export KEY_CONFIG=`$EASY_RSA/whichopensslcnf $EASY_RSA`
-		
+
 		export KEY_COUNTRY="US"
 		export KEY_PROVINCE="CA"
 		export KEY_CITY="SanFrancisco"
@@ -370,40 +378,40 @@ directory:
 		export KEY_EMAIL="me@myhost.mydomain"
 		export KEY_OU="MyOrganizationalUnit"
 	to
-	
+
 		export KEY_CONFIG=`$EASY_RSA/openssl-1.0.0.cnf`
-		
+
 		export KEY_COUNTRY="US"
 		export KEY_PROVINCE="NY"
 		export KEY_CITY="NYC"
 		export KEY_ORG="CHN"
 		export KEY_EMAIL="1@2.com"
 		export KEY_OU="ME"
-	
+
 	then "source" the variables after finished editing:
-	
+
 		$ source vars
 
-2. Generate the CA (certificate authority) (ca.crt). Follow the instruction and 
+2. Generate the CA (certificate authority) (ca.crt). Follow the instruction and
 	use "enters" to answer questions.
-	
+
 		$ ./clean-all && ./build-ca
 
-3. Generate the certificate (serve.crt) and key (server.key).  
+3. Generate the certificate (serve.crt) and key (server.key).
 Follow the instruction and use "enters" to answer questions.
-	
+
 		$ ./build-key-server server
-		
+
 4. Generate Diffie-Hellman parameters (dh2048.pem).
-	
+
 		$ ./build-dh
 
 5. Generate a random key for sharing (ta.key)
-		
+
 		$ openvpn --genkey --secret keys/ta.key
 
 6. Copy the files to the OpenVPN folder (in Ubuntu):
-		
+
 		$ sudo cp keys/{server.crt,server.key,ca.crt,dh2048.pem,ta.key} /etc/openvpn
 
 --
@@ -419,126 +427,126 @@ Check that the /etc/openvpn/server.conf file contains the following
 		key server.key  # This file should be kept secret
 		dh dh2048.pem
 
-- Setup firewall (Ubuntu FireWall). 
+- Setup firewall (Ubuntu FireWall).
 	Enable it manually:
-		
+
 		sudo vim /etc/ufw/ufw.conf
-	
-	Change the following 
-		
+
+	Change the following
+
 		ENABLED=no
 	to
 		ENABLED=yes
-		
+
 	The following command allows incoming traffic from port 1194/udp (default port and protocol):
-		
+
 		$ sudo ufw allow openvpn
-	
-	Edit the server configuration file  (/etc/openvpn/server.conf): 
+
+	Edit the server configuration file  (/etc/openvpn/server.conf):
 	uncomment the following line:
-	
+
 		push "redirect-gateway def1 bypass-dhcp"
-	
+
 	Set up iptable rule (eth0 is adjustable here) to NAT the VPN client.
-	
+
 		$ sudo iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE
-	
-	Edit rules for ufw (Ubuntu FireWall); insert the following lines at the 
+
+	Edit rules for ufw (Ubuntu FireWall); insert the following lines at the
 	beginning of the file "/etc/ufw/before.rules" (use sudo vim command) :
-	
+
 		*nat
-		:POSTROUTING ACCEPT [0:0] 
+		:POSTROUTING ACCEPT [0:0]
 		-A POSTROUTING -s 10.8.0.0/8 -o eth0 -j MASQUERADE
-		COMMIT		
+		COMMIT
 
 	uncomment the line 28 of the file /etc/sysctl.conf, so it becomes:
-		
+
 		# Uncomment the next line to enable packet forwarding for IPv4
 		net.ipv4.ip_forward=1
-	
+
 	reload the configuration:
-	
+
 		$ sudo sysctl -p /etc/sysctl.conf
-	
-	Allow packet through the ufw; change the following section to ACCEPT 
+
+	Allow packet through the ufw; change the following section to ACCEPT
 	in /etc/default/ufw:
-	
+
 		# Set the default forward policy to ACCEPT, DROP or REJECT.  Please note that
 		# if you change this you will most likely want to adjust your rules
 		DEFAULT_FORWARD_POLICY="ACCEPT"
-	
+
 	Reload firewall (it should say "firewall reloaded"):
-		
+
 		$ sudo ufw reload
-		
+
 - Start (stop) the service
-		
+
 		$ sudo systemctl start openvpn@server
-		
+
 	Use the following command to check the status:
-		
+
 		$ sudo systemctl is-active openvpn@server
-	
+
 - Prepare documents for clients (still in the certificate folder):
-		
+
 		$ source vars && ./build-key client
-	
+
 	Extract the example document:
-		
+
 		$ mkdir clients && cp /usr/share/doc/openvpn/examples/sample-config-files/client.conf clients/client.ovpn
-	
+
 	The rest of steps are done in the clients/client.ovpn file:
-	
+
 	Edit line 42:
-		
+
 		remote my-server-1 1194
-	
+
 	replace my-server-1 with ip address (wlan0 ip works):
-		
+
 		remote ip 1194
-		
+
 	uncomment lines 61,62:
-		
+
 		# Downgrade privileges after initialization (non-Windows only)
 		;user nobody
 		;group nogroup
 
 	comment lines 88-90 and 108:
-	
+
 		#ca ca.crt
 		#cert client.crt
 		#key client.key
 		#tls-auth ta.key 1
 
-	Lookup certificate/key folder, copy contents in 
+	Lookup certificate/key folder, copy contents in
 	ca.crt, client.crt, client.key, ta.key into clients/client.ovpn:
-		
+
 		<ca>
 		# Here goes the content of the ca.crt file
 		</ca>
-		
+
 		<cert>
 		# Here goes the content of the client.crt file
 		</cert>
-		
+
 		<key>
 		# Here goes the content of the client.key file
 		</key>
-		
+
 		key-direction 1
 		<tls-auth>
 		# The content of the ta.key file
 		</tls-auth>
-		
+
 - Last step! Let the phone use OpenVPN to import this .ovpn file to build connection!
 
 Trouble shooting:
 
 - Search for NDS: adjust ip address in the .ovpn file.
 - waiting for server, activiate server via
-		
+
 		$ sudo systemctl start openvpn@server
-			
+
 ### Set up SSH keypairs (auto log in)
 0. Generate a SSH Key:
 
@@ -558,22 +566,22 @@ id_rsa.pub: public key that stores in the remote server.
 Paste the id_rsa.pub to the following location of the remote server:
 
 	~/.ssh/
-	
+
 the file needs to be named as <u>authorized_keys</u>.
 
 change permission:
-	
+
 	chmod 600 authorized_keys
-	
+
 ##### For <u>mac</u>, edit config file in the local ~/.ssh/
 
 	Host *
 	 AddKeysToAgent yes
 	 UseKeychain yes
 	 IdentityFile ~/.ssh/id_rsa
- 	
+
  *id_rsa is the name of the key to be verified.*
- 
+
 ##### Shortcut for the log in:
 
 For example, I want to use $ssh k$ to log in:
@@ -581,7 +589,7 @@ For example, I want to use $ssh k$ to log in:
 	Host k
         User account
         IdentityFile .ssh/id_rsa
-        HostName server 
+        HostName server
 
 ## Got a Problem?
 ### Mac Issue
