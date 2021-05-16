@@ -4,7 +4,7 @@ title: "Git"
 permalink: /git/
 ---
 
-#How to GitHub
+# How to GitHub
 
 *[Branching](#branching)
 

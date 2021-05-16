@@ -4,8 +4,8 @@ title: "ROOT"
 permalink: /root/
 ---
 
-#ROOT
-###Browse the root file
+# Commands for ROOT
+### Browse the root file
 open a root file:
 
     root -l <name>.root
