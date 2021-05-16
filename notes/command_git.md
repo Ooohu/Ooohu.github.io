@@ -8,6 +8,7 @@ permalink: /git/
 
 *[Branching](#branching)
 
+
 ## Local git
 Things that are done locally in a single branch, not changing anything in the remote repository.
 
