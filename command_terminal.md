@@ -1,3 +1,9 @@
+---
+layout: page
+title: "Unix"
+permalink: /terminal/
+---
+
 # Terminal Commands
 This Markdown file contains commands for a unix terminal.
 

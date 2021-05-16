@@ -1,3 +1,8 @@
+---
+layout: page
+title: "How"
+---
+
 # Webpage management
 
 You just need to update the contents in the github server. And the changes will be applied a few minutes later.
