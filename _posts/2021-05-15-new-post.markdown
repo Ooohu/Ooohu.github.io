@@ -4,4 +4,5 @@ title:  "Testing post"
 date:   2021-05-15 22:03:55 -0600
 categories: toy
 ---
-It is just a post for testint purpose.
+
+Make posts in this format!
