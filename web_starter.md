@@ -2,7 +2,7 @@
 
 You just need to update the contents in the github server. And the changes will be applied a few minutes later.
 
-
+Tips for adding post/page is [here](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/adding-content-to-your-github-pages-site-using-jekyll)
 
 
 
