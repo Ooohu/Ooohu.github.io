@@ -1,7 +1,7 @@
 ---
-layout: hi_post
+layout: post
 title:  "22Welcome to Jekyll!"
-date:   2020-03-22 22:03:55 -0600
+date:   2021-03-22 22:03:55 -0600
 categories: jekyll update
 ---
 new
