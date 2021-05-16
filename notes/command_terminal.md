@@ -11,7 +11,8 @@ This Markdown file contains commands for a unix terminal.
 
 ### Common Commands
 * [Bash functions](#bash-functions)
-* [About files](#file-operation)
+* [Terminal Windows](#terminal-windows)
+* [File Operations](#file-operation)
 
 ### Apps
 * [tar](#tar)
