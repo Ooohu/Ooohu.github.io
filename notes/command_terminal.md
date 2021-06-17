@@ -600,3 +600,7 @@ Incorrect directory for an app? Try:
 
 Error: unrecognized command-line option '-stdlib=libc++'
 > I think I mess up gcc..
+
+### C++ compiler
+`error: ld returned 1 exit status`
+> Function is not defined, try a dummy definition.

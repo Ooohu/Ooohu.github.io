@@ -216,6 +216,31 @@ Merge a file from other branch:
       e - manually edit the current hunk
       ? - print help
 
+#### Fork a branch
+After you have cloned a branch and make modification, you want to save 
+the progress.
+You can fork a branch, i.e. create a repo in your account;
+
+In your local, rename your origin remote to upstream
+
+    `git remote rename origin upstream`
+
+Add a new origin
+
+    `git remote add origin <forked repository address>`
+
+Fetch & push
+
+```
+    git fetch origin
+    git push origin
+```
+
+Now, your repository will change to your forked repository.
+
+You local branch can now be pushed to the forked repository via
+
+	`git push -u origin <local branch name>
 
 ## Trouble Shooting
 
