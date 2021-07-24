@@ -216,6 +216,10 @@ Merge a file from other branch:
       e - manually edit the current hunk
       ? - print help
 
+#### Get a forked branch
+At a branch, one can access to a forked branch
+`git fetch <forked_repo_url> <branch>`
+
 #### Fork a branch
 After you have cloned a branch and make modification, you want to save 
 the progress.

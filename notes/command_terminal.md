@@ -18,7 +18,6 @@ This Markdown file contains commands for a unix terminal.
 * [tar](#tar)
 * [pdftk](#pdftk)
 * [tmux](#tmux)
-* [tar](#tar)
 * [make](#make)
 * [jekyll](#jekyll)
 * [Netcat](#netcat)
@@ -248,6 +247,16 @@ Copy file again:
 ## Tool
 ipython/ idle3/ otave/ jupyter notebook/ putty/ dconf/ gnome-tweaks/pdftk/lutris
 	
+### echo
+Apply `/` in the printout
+
+`echo -e "\na` will produce
+
+```
+
+a
+```
+
 ### pdftk
 
 Get all pdf in one:
