@@ -181,6 +181,8 @@ Check tag
 
 
 #### Cross Branching
+Checkout a remote branch
+	`git checkout -b <new_branch_name> origin/<target_branch>`
 
 Push a feature branch to target branch (will overwrite others' work):
 

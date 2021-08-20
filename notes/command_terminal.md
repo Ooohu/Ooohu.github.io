@@ -67,6 +67,8 @@ alias ls='ls -GFh'
 
 
 ### Terminal windows
+turn off scroll through history: `tput rmcup`
+
 New windows:
 
 	Ctrl+Shift+N
