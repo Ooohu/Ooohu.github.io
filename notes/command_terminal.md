@@ -21,6 +21,7 @@ This Markdown file contains commands for a unix terminal.
 * [make](#make)
 * [jekyll](#jekyll)
 * [Netcat](#netcat)
+* [nethogs](#nethogd)
 * [Dig](#dig)
 * [Home Brew](#brew)
 * [xmllint](#xmllint)
@@ -281,7 +282,8 @@ Tmux: (Scrolling)
 ### Tar
 Extract a a `.tar.gz` file
 	
-	tar -zxvf file.tar.gz
+	`tar -zxvf file.tar.gz`
+	`tar -xvf file.tar`
 
 ### Make
 `etc/Makefile.arch` has some alias that can be directly used that vary according to operation system.
@@ -303,6 +305,10 @@ Go to `http://localhost:4000` to visit it from the browser:
 A tool to check network connection
 `nc -c <url> <port>`
 gives the connection infomation
+
+### nethogs
+A tool to check network usage
+`sudo nethogs $device`
 
 ### Dig
 A tool for network trouble shooting
