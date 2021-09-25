@@ -7,11 +7,13 @@ permalink: /root/
 # Commands for ROOT
 ### Browse the root file
 Use a [TBrowser](https://root.cern.ch/doc/master/classTTreeViewer.html)
+
 ```
 root [0] gSystem->Load("TTreeViewer");
-root [1] TFile file("<file_name>");
+root [1] TFile file("<file_name>.root");
 root [2] new TTreeViewer("<tree_name>");
 ```
+Or can do this: `TBrowser b("<file_name.root>");`
 
 the class of an object is the text before the first underline, "\_" . 
 In general, the object can be grabbed via `*<gallery::Event>.getValidHandle()` function.

@@ -179,6 +179,11 @@ Check tag
 	
 	git tag
 
+Regrets a commit:
+	
+	git rebase -i <target-commit>~1  # start rebase from the previous commit of target commit
+		# then choose what action to take by deleting a line
+	git push -f origin HEAD #Hide your mistake by pushing it to the repository
 
 #### Cross Branching
 Checkout a remote branch
