@@ -236,6 +236,11 @@ Print output (https://askubuntu.com/questions/420981/how-do-i-save-terminal-outp
 	<executable> &>> <.txt> //append stdeer & output
 	<executable> 2>&1 <.txt> //append stdeer & output and display them
 
+### Desktop icons
+Remove trash can desktop icon in ubuntu 20.04 (link)[https://tipsonubuntu.com/2020/04/06/move-trash-dock-panel-ubuntu-20-04/]:
+	
+	gsettings set org.gnome.shell.extensions.desktop-icons show-trash false
+
 ### Get connected
 	ssh -X account@server
 Copy file to the school:
