@@ -68,6 +68,8 @@ alias ls='ls -GFh'
 
 
 ### Terminal windows
+Freeze windows `ctrl+s` and release it `ctrl+q`
+
 turn off scroll through history: `tput rmcup`
 
 New windows:
