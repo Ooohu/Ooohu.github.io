@@ -4,7 +4,14 @@ title: "ROOT"
 permalink: /root/
 ---
 
-# Commands for ROOT
+# ROOT
+
+How to use it as an *[interactive](#interactive-commands-for-root) tool or a [script](#script-snip)
+
+May also have *[bugs](#bugs-and-solutions) to be solved.
+
+## Interactive Commands for ROOT
+
 ### Browse the root file
 Use a [TBrowser](https://root.cern.ch/doc/master/classTTreeViewer.html)
 
@@ -54,21 +61,10 @@ Plot according to a given variable (with customized bins, e.g. 30 bins ranged fr
     vertex_tree->Draw("<object>>>hsqrt(30,0,1)","<condition 1>&&<condition 2>")
 
 
----
-Make a canvas for multiple plots (e.g. a 2 columns by 2 rows canvas):
-
-    TCanvas * c = new TCanvas();
-    c->Divide(2,2);
-then change to one of the canvas:
-
-    c->cd(1)
-
----
 Insert a line in to a histogram (???):
 
     ?????.Fit("pol n")
 
----
 Connect a friend tree (add tree in file2.root to the file1.root)T
 
     TFile f1("file1.root"); //open a root file
@@ -156,8 +152,16 @@ Get dimensions `<TMatrix>->GetNrows()`
 
 Get contents, (1,1) for example, `(*<TMatrix>)(1,1)`
 
+## Script Snip
+Make a canvas for multiple plots (e.g. a 2 columns by 2 rows canvas):
+	```
+    TCanvas * c = new TCanvas();
+    c->Divide(2,2);
+    c->cd(1);# then change to one of the canvas;
+	```
 
-### Bug from the script
+
+## Bugs and Solutions
 
 #### Drawing issue
 

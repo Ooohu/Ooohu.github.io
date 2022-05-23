@@ -6,9 +6,10 @@ permalink: /terminal/
 
 # Terminal Commands
 A cheat sheet for working in a UNIX terminal.
-*[Common Commands](common-commands)
-*[Apps](apps)
-*[Problems](got-a-problem)
+
+* [Common Commands](#common-commands)
+* [Apps](#apps)
+* [Problems](#got-a-problem)
 
 
 ## Common Commands
@@ -44,7 +45,6 @@ Short-cut
 ~~~
 alias ls='ls -GFh'
 ~~~
-
 
 
 ### Terminal windows
@@ -133,7 +133,7 @@ Open setting:
 
 	unity-control-center
 
-Shutdown: 
+Shutdown the system via any of the followings:
 
 	poweroff;
 	shutdown --help (Information of shutdown); 
@@ -161,19 +161,38 @@ Intallation Global vs. local
 - Global directory: `/usr/local/bin/`
 - local directory: `$HOME/`
 
-### File operation
----
-Show detail of files in the current folder:
+### Deal with text
+`cat <text_file>` Concatenates files And print on the stand output
+
+Print output (https://askubuntu.com/questions/420981/how-do-i-save-terminal-output-to-a-file)
 	
-	ls -alF
+	<executable> > <.txt> //rediret output
+	<executable> 2> <.txt> //rediret stdeer
+	<executable> &> <.txt> //redirect stdeer & output
+	<executable> >> <.txt> //append output
+	<executable> &>> <.txt> //append stdeer & output
+	<executable> 2>&1 <.txt> //append stdeer & output and display them
 
-Check the size of files in terminal:
+### Desktop icons
+Remove trash can desktop icon in ubuntu 20.04 [link](https://tipsonubuntu.com/2020/04/06/move-trash-dock-panel-ubuntu-20-04/):
+	
+	gsettings set org.gnome.shell.extensions.desktop-icons show-trash false
 
- 	du -a -h
+### Get connected
+	ssh -X account@server
+Copy file to the school:
 
-Delete a file (permanently): 
+	ssh-copy-id -i ~/.ssh/id_rsa.pub account@server
+Copy file again:
 
-	rm file
+	scp <file> <username>@<IP address or hostname>:<Destination>
+
+### File operation
+`ls -alF` shows detail of files in the current folder.
+
+`du -a -h` checks the size of files in terminal:
+
+`rm <file>` deletes a file (permanently): 
 
 Delete an empty folder
 
@@ -199,41 +218,14 @@ Create and edit a text file (in nano):
 
 	sudo nano /location
 
-Permission:
+Use `chmod` to chnage permission of a file with a permission code:
 
 0777: read & write & execute to everyone  
 755: read & execute to the owner
 
-### Deal with text
-Concatenate files And print on the stand outpuT
-
-	cat name.txt
-
-Print output (https://askubuntu.com/questions/420981/how-do-i-save-terminal-output-to-a-file)
-	
-	<executable> > <.txt> //rediret output
-	<executable> 2> <.txt> //rediret stdeer
-	<executable> &> <.txt> //redirect stdeer & output
-	<executable> >> <.txt> //append output
-	<executable> &>> <.txt> //append stdeer & output
-	<executable> 2>&1 <.txt> //append stdeer & output and display them
-
-### Desktop icons
-Remove trash can desktop icon in ubuntu 20.04 (link)[https://tipsonubuntu.com/2020/04/06/move-trash-dock-panel-ubuntu-20-04/]:
-	
-	gsettings set org.gnome.shell.extensions.desktop-icons show-trash false
-
-### Get connected
-	ssh -X account@server
-Copy file to the school:
-
-	ssh-copy-id -i ~/.ssh/id_rsa.pub account@server
-Copy file again:
-
-	scp <file> <username>@<IP address or hostname>:<Destination>
 
 ---
-### Apps
+## Apps
 * [tar](#tar)
 * [pdftk](#pdftk)
 * [tmux](#tmux)
@@ -245,8 +237,11 @@ Copy file again:
 * [Home Brew](#brew)
 * [xmllint](#xmllint)
 
-​	
-## Tool
+### App Management
+Install ZOOM via `sudo snap install zoom-client`
+
+
+### Installed Tools
 ipython/ idle3/ otave/ jupyter notebook/ putty/ dconf/ gnome-tweaks/pdftk/lutris
 	
 ### echo
@@ -274,15 +269,17 @@ Rearrange Pdf layout (column x row)
 	pdfnup --nup 2x1 mypdf.pdf
 
 ### Tmux
-Tmux: (Scrolling)
+Call up special command as `Ctrl+b + <command>`:
 
-	Ctrl+b + [
+enable scrolling: `<command> = [`
+next windows: `<command> = )`
+
 
 ### Tar
 Extract a a `.tar.gz` file
 	
-	`tar -zxvf file.tar.gz`
-	`tar -xvf file.tar`
+	tar -zxvf file.tar.gz
+	tar -xvf file.tar
 
 ### Make
 `etc/Makefile.arch` has some alias that can be directly used that vary according to operation system.
