@@ -159,7 +159,17 @@ Make a canvas for multiple plots (e.g. a 2 columns by 2 rows canvas):
     c->Divide(2,2);
     c->cd(1);# then change to one of the canvas;
 	```
-
+Make a gif:
+	```
+	TPad p = (TPad*)can3d->cd();
+    can3D->SaveAs("pgif.gif");
+            for(double k=0; k<= 360.01; k+=1.0){
+                p->GetView()->RotateView(360-k,k);
+                 can3D->Update();
+                 can3D->SaveAs("pgif.gif+3");
+             }
+    can3D->SaveAs("pgif.gif++");
+	```
 
 ## Bugs and Solutions
 
