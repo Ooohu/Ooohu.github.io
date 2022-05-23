@@ -1,41 +1,21 @@
 ---
 layout: page
-title: "Unix"
+title: "UNIX"
 permalink: /terminal/
 ---
 
 # Terminal Commands
-This Markdown file contains commands for a unix terminal.
+A cheat sheet for working in a UNIX terminal.
+*[Common Commands](common-commands)
+*[Apps](apps)
+*[Problems](got-a-problem)
 
-## Index
 
-### Common Commands
+## Common Commands
 * [Bash functions](#bash-functions)
 * [Terminal Windows](#terminal-windows)
 * [File Operations](#file-operation)
 
-### Apps
-* [tar](#tar)
-* [pdftk](#pdftk)
-* [tmux](#tmux)
-* [make](#make)
-* [jekyll](#jekyll)
-* [Netcat](#netcat)
-* [nethogs](#nethogd)
-* [Dig](#dig)
-* [Home Brew](#brew)
-* [xmllint](#xmllint)
-
-### Projects
-* [Formating a flash drive](#formating-a-flash-drive)
-* [To be a Wlan server](#to-be-a-wlan-server)
-* [To be a VPN server](#to-be-a-VPN-server)
-* [SSH keyparis](#set-up-ssh-keypairs-auto-log-in)
-
-### Got a Problem?
-* [Mac](#mac-issue)
-
-## Common Commands
 ### Bash Functions
 Change prompt to "username@hostname:cwd \$"
 
@@ -252,6 +232,18 @@ Copy file again:
 
 	scp <file> <username>@<IP address or hostname>:<Destination>
 
+---
+### Apps
+* [tar](#tar)
+* [pdftk](#pdftk)
+* [tmux](#tmux)
+* [make](#make)
+* [jekyll](#jekyll)
+* [Netcat](#netcat)
+* [nethogs](#nethogd)
+* [Dig](#dig)
+* [Home Brew](#brew)
+* [xmllint](#xmllint)
 
 ​	
 ## Tool
@@ -331,7 +323,14 @@ See what homebrew has installed in your computer
 See what's wrong with your xml file:
 `xmllint --noout <*.xml>`
 
-## Specific Project 
+---
+## Projects
+* [Formating a flash drive](#formating-a-flash-drive)
+* [To be a Wlan server](#to-be-a-wlan-server)
+* [To be a VPN server](#to-be-a-VPN-server)
+* [SSH keyparis](#set-up-ssh-keypairs-auto-log-in)
+
+
 ### Formating a flash drive
 Remove bad blocks:
 
@@ -617,7 +616,11 @@ For example, I want to use $ssh k$ to log in:
 	    IdentityFile .ssh/id_rsa
 	    HostName server 
 
+---
 ## Got a Problem?
+* [Mac](#mac-issue)
+
+
 ### Mac Issue
 Incorrect directory for an app? Try:
 > `export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"`
