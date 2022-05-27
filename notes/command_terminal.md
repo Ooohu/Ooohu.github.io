@@ -238,7 +238,19 @@ Use `chmod` to chnage permission of a file with a permission code:
 * [xmllint](#xmllint)
 
 ### App Management
+
+A not reliable way
+
 Install ZOOM via `sudo snap install zoom-client`
+Remove it  via `sudo snap remove zoom-client`
+
+should do it via:
+```
+sudo apt-get remove zoom
+wget http://zoom.us/client/latest/zoom_amd64.deb
+sudo apt install ./zoom_amd64.deb
+rm zoom_amd64.deb
+```
 
 
 ### Installed Tools
