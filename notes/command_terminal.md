@@ -280,12 +280,20 @@ Rearrange Pdf layout (column x row)
 	
 	pdfnup --nup 2x1 mypdf.pdf
 
-### Tmux
-Call up special command as `Ctrl+b + <command>`:
+### tmux
+
+#### Console
+Call up special command throuh `Ctrl+b + <command>`:
 
 enable scrolling: `<command> = [`
 next windows: `<command> = )`
 
+#### Session Management
+`tmux list-sessions` shows sessions.
+
+`tmux kill-session -t <name of sessions>` to end one session. 
+
+`tmux kill-server` or `pkill -f tmux` to kill all tmux sessions
 
 ### Tar
 Extract a a `.tar.gz` file
