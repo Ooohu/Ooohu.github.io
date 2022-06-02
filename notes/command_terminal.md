@@ -291,6 +291,9 @@ next windows: `<command> = )`
 #### Session Management
 `tmux list-sessions` shows sessions.
 
+`tmux a` attaches the last session
+`tmux a -t <session #/name>` attaches the session in the list.
+
 `tmux kill-session -t <name of sessions>` to end one session. 
 
 `tmux kill-server` or `pkill -f tmux` to kill all tmux sessions
