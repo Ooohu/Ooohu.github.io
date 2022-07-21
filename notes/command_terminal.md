@@ -68,6 +68,11 @@ alias ls='ls -GFh'
 
 
 ### Terminal windows
+Update packages:
+`sudo apt update`
+`sudo apt upgrade`
+
+
 Freeze windows `ctrl+s` and release it `ctrl+q`
 
 turn off scroll through history: `tput rmcup`

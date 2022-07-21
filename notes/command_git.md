@@ -227,6 +227,14 @@ Merge a file from other branch:
 At a branch, one can access to a forked branch
 `git fetch <forked_repo_url> <branch>`
 
+Use [these commands](https://stackoverflow.com/questions/9153598/how-do-i-fetch-a-branch-on-someone-elses-fork-on-github) to get branches from other user:
+```
+git remote add <theirusername> <https://github.com/theirusername/reponame>
+git fetch <theirusername>
+git checkout -b <mynamefortheirbranch> <theirusername/theirbranch>
+```
+
+
 #### Fork a branch
 After you have cloned a branch and make modification, you want to save 
 the progress.
