@@ -1,41 +1,22 @@
 ---
 layout: page
-title: "Unix"
+title: "UNIX"
 permalink: /terminal/
 ---
 
 # Terminal Commands
-This Markdown file contains commands for a unix terminal.
+A cheat sheet for working in a UNIX terminal.
 
-## Index
+* [Common Commands](#common-commands)
+* [Apps](#apps)
+* [Problems](#got-a-problem)
 
-### Common Commands
+
+## Common Commands
 * [Bash functions](#bash-functions)
 * [Terminal Windows](#terminal-windows)
 * [File Operations](#file-operation)
 
-### Apps
-* [tar](#tar)
-* [pdftk](#pdftk)
-* [tmux](#tmux)
-* [make](#make)
-* [jekyll](#jekyll)
-* [Netcat](#netcat)
-* [nethogs](#nethogd)
-* [Dig](#dig)
-* [Home Brew](#brew)
-* [xmllint](#xmllint)
-
-### Projects
-* [Formating a flash drive](#formating-a-flash-drive)
-* [To be a Wlan server](#to-be-a-wlan-server)
-* [To be a VPN server](#to-be-a-VPN-server)
-* [SSH keyparis](#set-up-ssh-keypairs-auto-log-in)
-
-### Got a Problem?
-* [Mac](#mac-issue)
-
-## Common Commands
 ### Bash Functions
 Change prompt to "username@hostname:cwd \$"
 
@@ -64,7 +45,6 @@ Short-cut
 ~~~
 alias ls='ls -GFh'
 ~~~
-
 
 
 ### Terminal windows
@@ -158,7 +138,7 @@ Open setting:
 
 	unity-control-center
 
-Shutdown: 
+Shutdown the system via any of the followings:
 
 	poweroff;
 	shutdown --help (Information of shutdown); 
@@ -186,19 +166,38 @@ Intallation Global vs. local
 - Global directory: `/usr/local/bin/`
 - local directory: `$HOME/`
 
-### File operation
----
-Show detail of files in the current folder:
+### Deal with text
+`cat <text_file>` Concatenates files And print on the stand output
+
+Print output (https://askubuntu.com/questions/420981/how-do-i-save-terminal-output-to-a-file)
 	
-	ls -alF
+	<executable> > <.txt> //rediret output
+	<executable> 2> <.txt> //rediret stdeer
+	<executable> &> <.txt> //redirect stdeer & output
+	<executable> >> <.txt> //append output
+	<executable> &>> <.txt> //append stdeer & output
+	<executable> 2>&1 <.txt> //append stdeer & output and display them
 
-Check the size of files in terminal:
+### Desktop icons
+Remove trash can desktop icon in ubuntu 20.04 [link](https://tipsonubuntu.com/2020/04/06/move-trash-dock-panel-ubuntu-20-04/):
+	
+	gsettings set org.gnome.shell.extensions.desktop-icons show-trash false
 
- 	du -a -h
+### Get connected
+	ssh -X account@server
+Copy file to the school:
 
-Delete a file (permanently): 
+	ssh-copy-id -i ~/.ssh/id_rsa.pub account@server
+Copy file again:
 
-	rm file
+	scp <file> <username>@<IP address or hostname>:<Destination>
+
+### File operation
+`ls -alF` shows detail of files in the current folder.
+
+`du -a -h` checks the size of files in terminal:
+
+`rm <file>` deletes a file (permanently): 
 
 Delete an empty folder
 
@@ -224,42 +223,42 @@ Create and edit a text file (in nano):
 
 	sudo nano /location
 
-Permission:
+Use `chmod` to chnage permission of a file with a permission code:
 
 0777: read & write & execute to everyone  
 755: read & execute to the owner
 
-### Deal with text
-Concatenate files And print on the stand outpuT
 
-	cat name.txt
+---
+## Apps
+* [tar](#tar)
+* [pdftk](#pdftk)
+* [tmux](#tmux)
+* [make](#make)
+* [jekyll](#jekyll)
+* [Netcat](#netcat)
+* [nethogs](#nethogd)
+* [Dig](#dig)
+* [Home Brew](#brew)
+* [xmllint](#xmllint)
 
-Print output (https://askubuntu.com/questions/420981/how-do-i-save-terminal-output-to-a-file)
-	
-	<executable> > <.txt> //rediret output
-	<executable> 2> <.txt> //rediret stdeer
-	<executable> &> <.txt> //redirect stdeer & output
-	<executable> >> <.txt> //append output
-	<executable> &>> <.txt> //append stdeer & output
-	<executable> 2>&1 <.txt> //append stdeer & output and display them
+### App Management
 
-### Desktop icons
-Remove trash can desktop icon in ubuntu 20.04 (link)[https://tipsonubuntu.com/2020/04/06/move-trash-dock-panel-ubuntu-20-04/]:
-	
-	gsettings set org.gnome.shell.extensions.desktop-icons show-trash false
+A not reliable way
 
-### Get connected
-	ssh -X account@server
-Copy file to the school:
+Install ZOOM via `sudo snap install zoom-client`
+Remove it  via `sudo snap remove zoom-client`
 
-	ssh-copy-id -i ~/.ssh/id_rsa.pub account@server
-Copy file again:
-
-	scp <file> <username>@<IP address or hostname>:<Destination>
+should do it via:
+```
+sudo apt-get remove zoom
+wget http://zoom.us/client/latest/zoom_amd64.deb
+sudo apt install ./zoom_amd64.deb
+rm zoom_amd64.deb
+```
 
 
-​	
-## Tool
+### Installed Tools
 ipython/ idle3/ otave/ jupyter notebook/ putty/ dconf/ gnome-tweaks/pdftk/lutris
 	
 ### echo
@@ -286,16 +285,29 @@ Rearrange Pdf layout (column x row)
 	
 	pdfnup --nup 2x1 mypdf.pdf
 
-### Tmux
-Tmux: (Scrolling)
+### tmux
 
-	Ctrl+b + [
+#### Console
+Call up special command throuh `Ctrl+b + <command>`:
+
+enable scrolling: `<command> = [`
+next windows: `<command> = )`
+
+#### Session Management
+`tmux list-sessions` shows sessions.
+
+`tmux a` attaches the last session
+`tmux a -t <session #/name>` attaches the session in the list.
+
+`tmux kill-session -t <name of sessions>` to end one session. 
+
+`tmux kill-server` or `pkill -f tmux` to kill all tmux sessions
 
 ### Tar
 Extract a a `.tar.gz` file
 	
-	`tar -zxvf file.tar.gz`
-	`tar -xvf file.tar`
+	tar -zxvf file.tar.gz
+	tar -xvf file.tar
 
 ### Make
 `etc/Makefile.arch` has some alias that can be directly used that vary according to operation system.
@@ -336,7 +348,14 @@ See what homebrew has installed in your computer
 See what's wrong with your xml file:
 `xmllint --noout <*.xml>`
 
-## Specific Project 
+---
+## Projects
+* [Formating a flash drive](#formating-a-flash-drive)
+* [To be a Wlan server](#to-be-a-wlan-server)
+* [To be a VPN server](#to-be-a-VPN-server)
+* [SSH keyparis](#set-up-ssh-keypairs-auto-log-in)
+
+
 ### Formating a flash drive
 Remove bad blocks:
 
@@ -622,7 +641,11 @@ For example, I want to use $ssh k$ to log in:
 	    IdentityFile .ssh/id_rsa
 	    HostName server 
 
+---
 ## Got a Problem?
+* [Mac](#mac-issue)
+
+
 ### Mac Issue
 Incorrect directory for an app? Try:
 > `export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"`

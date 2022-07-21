@@ -1,0 +1,9 @@
+---
+layout: post
+title:  "Notes for Winterover"
+date:   2022-05-23 
+categories: toy
+---
+
+- Writing systems shell scripts BASH/Python/Perl
+- Network management such as TCP/IP networking
