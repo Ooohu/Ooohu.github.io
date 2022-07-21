@@ -145,9 +145,9 @@ Shutdown the system via any of the followings:
 	shutdown 5 (shutdown after 5 minutes); 
 	reboot (restart)
 
-Search a pattern in a file:
+Search a pattern in a file: `grep pattern file_name`
 
-	grep pattern file_name
+search a tab: `grep -P '\t' ./*`
 
 view running processes:
 
