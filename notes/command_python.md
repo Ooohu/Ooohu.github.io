@@ -16,7 +16,9 @@ Upgrade pip `python -m pip install -upgrade pip`
 
 Install Jupyter: `python -m pip install jupyter`
 
-Want it run by clicking? Use `pip install nbopen` then `python -m nbopen.install_win`
+Note new version does not like firfox, so use `pip install notebook==5.6.0`
+
+Want to run `*.ipynb` by clicking? Use `pip install nbopen` then `python -m nbopen.install_win`
 
 Install a module use `python -m pip install <module name>`
 
