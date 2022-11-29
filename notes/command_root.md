@@ -22,7 +22,7 @@ root [2] new TTreeViewer("<tree_name>");
 ```
 Or can do this: `TBrowser b("<file_name.root>");`
 
-the class of an object is the text before the first underline, "\_" . 
+the class of an object is the text before the first underline, "\_" .
 In general, the object can be grabbed via `*<gallery::Event>.getValidHandle()` function.
 
 
@@ -44,8 +44,8 @@ Show brief summary:
 
 Save this summary to a file:
 
-	((TTreePlayer*)(T->GetPlayer()))->SetScanRedirect(true); 
-	((TTreePlayer*)(T->GetPlayer()))->SetScanFileName("toto.txt"); 
+	((TTreePlayer*)(T->GetPlayer()))->SetScanRedirect(true);
+	((TTreePlayer*)(T->GetPlayer()))->SetScanFileName("toto.txt");
    	tree->Scan(...);  
 
 Show number of Entries:
@@ -60,6 +60,9 @@ Plot according to a given variable (with customized bins, e.g. 30 bins ranged fr
 
     vertex_tree->Draw("<object>>>hsqrt(30,0,1)","<condition 1>&&<condition 2>")
 
+Plot them in the same canvas:
+
+    vertex_tree->Draw("<object>","<condition 1>&&<condition 2>", "same")
 
 Insert a line in to a histogram (???):
 
@@ -113,7 +116,7 @@ Set title:
 
 #### Draw with special variables
 [Special function](https://root.cern.ch/doc/master/classTTree.html)
-	
+
 `Sum$(variable)` will get the sum of each elements in that variable;
 
 
@@ -145,7 +148,7 @@ gSystem->RedirectOutput("/dev/null");
 #### TDecompLU
 `TDecompLU lu(A)` decomposes a matrix `A` into $$PA=LU$$, where $P$ is a permutation matrix, $L$ is unit lower triangular, $U$ is upper triangular. That is, $A$ is analyzed, and $P$, $L$, $U$ are available for further use.
 
-`lu.Decompose()` 
+`lu.Decompose()`
 
 #### TMatrix
 Get dimensions `<TMatrix>->GetNrows()`
@@ -182,5 +185,3 @@ Warning in <TCanvas::ResizePad>: Inf/NaN propagated to the pad. Check drawn obje
 ```
 
 This could be caused by the Float_t numbers in `var2` with infinite digits, and it can be "fixed" by limiting the digits of `var2` (change it into int and change it back to Float_t).
-
-
