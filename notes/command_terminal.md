@@ -318,6 +318,11 @@ Some grammar for Makefile:
 
 For given input `A:B`, `$@` calls `A` and `$^` calls `B`.
 
+### Jupyter Notebook
+Install Jupyter at Ubuntu 22.04.1 LTS, sovling [problem](https://stackoverflow.com/questions/70753768/jupyter-notebook-access-to-the-file-was-denied) of `Access to the file was denied`:
+
+Modify `~/.jupyter/jupyter_notebook_config.py` created by `jupyter notebook --generate-config`
+
 ### Jekyll
 Activate webpage in the local computer:
 
