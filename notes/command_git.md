@@ -304,4 +304,7 @@ fatal: The remote end hung up unexpectedly
 > ```
 > ssh -T git@github.com
 > ```
+> 
+> Connect github via SSH:
+> `git remote set-url origin git@github.com:USERNAME/REPOSITORY.git`
 
