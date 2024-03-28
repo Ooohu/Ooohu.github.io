@@ -24,11 +24,11 @@ title: Title
 description: >- # this means to ignore newlines until "baseurl:"
   A page with my miscellaneous notes! Currently I am collecting coordinates of
   neutrino experiments:
-  <a href="https://ooohu.github.io/NeutrinoExperimentsOnEarth/">NeutrinoExperimentsOnEarth</a>
+  [NeutrinoExperimentsOnEarth](https://ooohu.github.io/NeutrinoExperimentsOnEarth/)
 #  line in _config.yml. It will appear in your document head meta (for
 #  Google search results) and in your feed.xml site description.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "keng.nu" # the base hostname & protocol for your site, e.g. http://example.com
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 #twitter_username: jekyllrb
 github_username:  Ooohu
