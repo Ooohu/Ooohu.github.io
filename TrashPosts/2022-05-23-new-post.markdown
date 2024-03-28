@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Notes for Winterover"
-date:   2022-05-23 
+date:   2022-05-23
 categories: toy
 ---
 
