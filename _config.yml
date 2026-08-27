@@ -31,6 +31,7 @@ navbar-links:
     - UNIX: "notes/command_terminal"
     - Mathematica: "notes/command_math"
   Nu Detector: "https://ooohu.github.io/NeutrinoExperimentsOnEarth/"
+  Nu Detector: "notes/nu-detector"
 
 
 ################
