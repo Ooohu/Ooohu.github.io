@@ -18,7 +18,36 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Title
+title: Keng Lin
+
+###############################################
+# --- List of links in the navigation bar --- #
+###############################################
+
+navbar-links:
+  How To: 
+    - Git: "notes/command_git"
+    - ROOT: "notes/command_root"
+    - UNIX: "notes/command_terminal"
+    - Mathematica: "notes/command_math"
+  Nu Detector: "https://ooohu.github.io/NeutrinoExperimentsOnEarth/"
+
+
+################
+# --- Logo --- #
+################
+
+# Image to show in the navigation bar - works best with a square image
+# Remove this parameter if you don't want an image in the navbar
+avatar: "/assets/img/me.jpeg"
+
+# By default, the image is cut into a circle. You can disable this behaviour by setting 'round-avatar: false'
+round-avatar: true
+
+# If you want to have an image logo in the top-left corner instead of having the title of the website,
+# then specify the following parameter
+#title-img: /path/to/image
+
 
 #email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
@@ -30,8 +59,21 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
-#twitter_username: jekyllrb
-github_username:  Ooohu
+#####################################
+# --- Footer social media links --- #
+#####################################
+
+# Select the social network links that you want to show in the footer.
+# You can change the order that they show up on the page by changing the order here.
+# Uncomment the links you want to show and add your information to each one.
+social-network-links:
+  github:  Ooohu
+  linkedin: keng-lin-a864b198
+  ORCID: 0000-0003-4442-8554
+  google-scholar: 8zLy91EAAAAJ
+  email: "keng.lin@rutgers.edu"
+  rss: false
+
 
 # Build settings
 theme: minima

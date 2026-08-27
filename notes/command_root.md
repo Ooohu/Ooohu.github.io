@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "ROOT"
-permalink: /root/
+permalink: /notes/command_root/
 ---
 
 # ROOT

@@ -1,9 +1,8 @@
 ---
 layout: page
 title: "UNIX"
-permalink: /terminal/
+permalink: /notes/command_terminal/
 ---
-
 # Terminal Commands
 A cheat sheet for working in a UNIX terminal.
 
